@@ -17,7 +17,7 @@ static size_t gpsDataAvailable = 0;
 static struct minmea_sentence_rmc lastFrame;
 static char* gps_data;
 
-char *mgos_get_location()
+char *mgos_gps_get_location()
 {
 
     float lat = minmea_tocoord(&lastFrame.latitude);
