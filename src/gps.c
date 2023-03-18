@@ -39,7 +39,7 @@ char *mgos_gps_get_location()
         speed = 0.0f;
     }
 
-    snprintf(gps_data, 63, "{lat: \"%f\", lon: \"%f\", sp: \"%f\"}", lat, lon, speed);
+    snprintf(gps_data, 73, "{\"lat\": \"%f\", \"lon\": \"%f\", \"sp\": \"%f\"}", lat, lon, speed);
 
     return gps_data;
 }
@@ -200,7 +200,7 @@ bool mgos_gps_init(void)
     mgos_uart_set_dispatcher(gps_uart_no, uart_dispatcher, NULL /* arg */);
     mgos_uart_set_rx_enabled(gps_uart_no, true);
 
-    gps_data = calloc(1, 64);
+    gps_data = calloc(1, 74);
     
     return true;
 }
